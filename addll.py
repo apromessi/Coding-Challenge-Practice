@@ -68,6 +68,15 @@ def add_linked_lists(l1, l2):
     '212'
     """
 
+    l1_reversed = l1.as_rev_string()
+    l2_reversed = l2.as_rev_string()
+    ll_sum = int(l1_reversed) + int(l2_reversed)
+    next = None
+    for num in str(ll_sum):
+        new_node = Node(num, next)
+        next = new_node
+    return new_node
+
 
 if __name__ == '__main__':
     import doctest

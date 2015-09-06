@@ -23,6 +23,11 @@ def missing_number(nums, max_num):
     5
     """
 
+    expected_sum = sum(range(1, max_num + 1))
+    actual_sum = sum(nums)
+    missing_num = expected_sum - actual_sum
+    return missing_num
+
 
 if __name__ == '__main__':
     import doctest

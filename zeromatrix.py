@@ -17,7 +17,15 @@ def zero_matrix(matrix):
         [[0, 0, 0, 0], [5, 0, 7, 8], [9, 0, 11, 12]]
     """
 
-    pass
+    for row_index, row in enumerate(matrix):
+        for i, num in enumerate(row):
+            if num == 0:
+                for j in range(len(row)):
+                    row[j] = 0
+                for row in matrix:
+                    row[i] = 0
+                return matrix
+    return matrix
 
 
 if __name__ == "__main__":

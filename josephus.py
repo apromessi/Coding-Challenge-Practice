@@ -31,11 +31,12 @@ def find_survivor(num_people, kill_every):
 
     head = Node(1)
     prev = head
-    for num in range(2, num_people+1):
+    for num in range(1, num_people+1):
         new_node = Node(num, prev)
+        print new_node, "new_node"
         prev.next = new_node
         prev = new_node
-    head.prev = new_node
+    head.prev = prev
 
     current = head
     while current.next or current.prev:

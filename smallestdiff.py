@@ -41,17 +41,38 @@ def smallest_diff(a, b):
 
 
 # if finding smallest diff when comparing nums in the two lists against each other
-def smallest_diff(a, b):
+def smallest_diff2(a, b):
     """Return smallest diff between all items in a and b.
 
-        >>> smallest_diff([10, 20, 30, 40], [15, 25, 33, 45])
+        >>> smallest_diff2([10, 20, 30, 40], [15, 25, 33, 45])
         3
 
-        >>> smallest_diff([10, 12, 23, 12], [11, 23, 15, 42, 43])
+        >>> smallest_diff2([2, 8, 10, 12, 23, 12], [11, 25, 15, 42, 43])
         1
     """
 
-       
+    a.sort()
+    b.sort()
+
+    best = None
+
+    a_index = 0
+    b_index = 0
+
+    while a_index < len(a) and b_index < len(b):
+        diff = abs(a[a_index] - b[b_index])
+        
+        if diff == 0:
+            return 0
+
+        if best is None or diff < best:
+            best = diff
+
+        if a[a_index] > b[b_index]:
+            b_index += 1
+        else:
+            a_index += 1
+    return best
 
 
 if __name__ == '__main__':

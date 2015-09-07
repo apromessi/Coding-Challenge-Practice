@@ -19,6 +19,7 @@ Gayle Laakmann McDowell, Career Cup (Palo Alto, CA). 2015.
 """
 
 
+# if smallest diff out of all nums in both lists
 def smallest_diff(a, b):
     """Return smallest diff between all items in a and b.
 
@@ -29,7 +30,28 @@ def smallest_diff(a, b):
         0
     """
 
+    a.extend(b)
+    a.sort()
+    min_diff = abs(a[0] - a[1])
+    for i in range(len(a)-1):
+        diff = abs(a[i] - a[i+1])
+        if diff < min_diff:
+            min_diff = diff
+    return min_diff
 
+
+# if finding smallest diff when comparing nums in the two lists against each other
+def smallest_diff(a, b):
+    """Return smallest diff between all items in a and b.
+
+        >>> smallest_diff([10, 20, 30, 40], [15, 25, 33, 45])
+        3
+
+        >>> smallest_diff([10, 12, 23, 12], [11, 23, 15, 42, 43])
+        1
+    """
+
+       
 
 
 if __name__ == '__main__':

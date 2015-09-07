@@ -24,7 +24,12 @@ def smallest_diff(a, b):
 
         >>> smallest_diff([10, 20, 30, 40], [15, 25, 33, 45])
         3
+
+        >>> smallest_diff([10, 12, 23, 12], [11, 23, 15, 42, 43])
+        0
     """
+
+
 
 
 if __name__ == '__main__':

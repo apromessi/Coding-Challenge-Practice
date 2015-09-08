@@ -6,8 +6,11 @@ def reverse_list(a_list):
     >>> reverse_list([5])
     [5]
     """
-
-    pass
+    for i in range(len(a_list)/2):
+        temp = a_list[i]
+        a_list[i] = a_list[-i-1]
+        a_list[-i-1] = temp
+    return a_list
 
 
 def reverse_list_slicing(a_list):
@@ -18,8 +21,7 @@ def reverse_list_slicing(a_list):
     >>> reverse_list([5])
     [5]
     """
-
-    pass
+    return a_list[::-1]
 
 
 def reverse_string(string):
@@ -32,3 +34,8 @@ def reverse_string(string):
     """
 
     pass
+
+if __name__ == '__main__':
+    import doctest
+    if doctest.testmod().failed == 0:
+        print "\n*** ALL TEST PASSED. W00T!\n"

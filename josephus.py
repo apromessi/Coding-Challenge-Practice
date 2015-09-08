@@ -30,6 +30,9 @@ def find_survivor(num_people, kill_every):
         >>> find_survivor(41, 3)
         31
 
+        >>> find_survivor(10, 3)
+        4
+
     As a sanity case, if never skip anyone, the last person will be our survivor:
 
         >>> find_survivor(10, 1)
@@ -46,10 +49,10 @@ def find_survivor(num_people, kill_every):
     head.prev.next = head
 
     current = head
-    while current.next != current.prev:
-        for i in range(kill_every):
-            current = current.next
+    while current.next != current:
+        for i in range(kill_every-1):
             # print current, "current"
+            current = current.next
         kill = current
         # print kill, "kill"
         current = current.next

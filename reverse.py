@@ -13,17 +13,6 @@ def reverse_list(a_list):
     return a_list
 
 
-def reverse_list_slicing(a_list):
-    """
-    >>> reverse_list(['a', 'b', 'c', 'd', 'e'])
-    ['e', 'd', 'c', 'b', 'a']
-
-    >>> reverse_list([5])
-    [5]
-    """
-    return a_list[::-1]
-
-
 def reverse_string(string):
     """
     >>> reverse_string('abcde')
@@ -33,7 +22,8 @@ def reverse_string(string):
     '!dlroW olleH'
     """
 
-    pass
+    return string[::-1]
+
 
 if __name__ == '__main__':
     import doctest

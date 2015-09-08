@@ -21,6 +21,17 @@ def find_most_anagrams_from_wordlist(wordlist):
     'angor'
     """
 
+    anagrams = {}
+    most_anagrams = [0, 'key']
+
+    for word in wordlist[::-1]:
+        key = ''.join(sorted(word))
+        anagrams.setdefault(key, []).append(word)
+        if len(anagrams[key]) >= most_anagrams[0]:
+            most_anagrams[0] = len(anagrams[key])
+            most_anagrams[1] = key
+    return anagrams[most_anagrams[1]][-1]
+
 
 if __name__ == "__main__":
     import doctest

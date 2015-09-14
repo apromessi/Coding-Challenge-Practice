@@ -36,8 +36,28 @@ class LinkedList(object):
         
 linked = LinkedList()
 linked.create_ll([1, 2, 3, 4, 5, 6, 7])
-print "Print forwards list"
-linked.print_ll()
+# print "Print forwards list"
+# linked.print_ll()
 linked.reverse()
-print "Print reversed list"
-linked.print_ll()
+# print "Print reversed list"
+# linked.print_ll()
+
+# Merge sort with linked lists
+# - given 1 linked list with two sorted parts
+# - should be a constant space solution
+
+two_in_one = LinkedList()
+two_in_one.create_ll([1, 3, 4, 5, 2, 4, 7])
+
+def merge(linked_list):
+    # traverse until you find data that is lower than previous item
+    a_head = linked_list.head
+    current = a_head
+    while current.data < current.next.data:
+        current = current.next
+    b_head = current.next
+    
+    # call it the new head
+    # traverse both sections of the list at once and change pointers to order data
+
+merge(two_in_one)
